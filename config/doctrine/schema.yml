@@ -1,106 +1,10 @@
-Awards:
-  connection: doctrine
-  tableName: nf_awards
-  columns:
-    id:
-      type: integer(8)
-      fixed: false
-      unsigned: true
-      primary: true
-      autoincrement: true
-    winning_moment:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    is_available:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      default: '1'
-      notnull: true
-      autoincrement: false
-  relations:
-    Winners:
-      local: id
-      foreign: award_id
-      type: many
-    WinnersInformation:
-      local: id
-      foreign: award_id
-      type: many
-Codes:
-  connection: doctrine
-  tableName: nf_codes
-  columns:
-    fbuser_id:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-    string_code:
-      type: string(32)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    user_folder:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    created_date:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-    played_date:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-    number_of_second:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: false
-      default: '0'
-      notnull: true
-      autoincrement: false
-    finished:
-      type: integer(1)
-      fixed: false
-      unsigned: false
-      primary: false
-      default: '0'
-      notnull: true
-      autoincrement: false
-    finished_date:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: false
-      autoincrement: false
-  relations:
-    Fbusers:
-      local: fbuser_id
-      foreign: fbuser_id
-      type: one
 Fbusers:
   connection: doctrine
   tableName: nf_fbusers
   columns:
+    user_id:
+      type: bigint(20)
+      autoincrement: true
     fbuser_id:
       type: string(255)
       fixed: false
@@ -149,217 +53,102 @@ Fbusers:
       primary: false
       notnull: false
       autoincrement: false
-  relations:
-    Codes:
-      local: fbuser_id
-      foreign: fbuser_id
-      type: many
-    Invitations:
-      local: fbuser_id
-      foreign: invitee_id
-      type: many
-    Invitations_2:
-      class: Invitations
-      local: fbuser_id
-      foreign: inviter_id
-      type: many
-    Winners:
-      local: fbuser_id
-      foreign: fbuser_id
-      type: many
-    WinnersInformation:
-      local: fbuser_id
-      foreign: fbuser_id
-      type: many
-Invitations:
+  #relations:
+  #  Codes:
+  #    local: fbuser_id
+  #    foreign: fbuser_id
+  #    type: many
+Image:
   connection: doctrine
-  tableName: nf_invitations
+  tableName: nf_image
   columns:
-    id:
-      type: integer(8)
-      fixed: false
-      unsigned: true
+    image_id:
+      type: bigint(20)
+      notnull: true
       primary: true
       autoincrement: true
-    fbrequest_id:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    inviter_id:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    invitee_id:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    requested_date:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    accepted_method:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    accepted_date:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-  relations:
-    Fbusers:
-      local: invitee_id
-      foreign: fbuser_id
-      type: one
-    Fbusers_2:
-      class: Fbusers
-      local: inviter_id
-      foreign: fbuser_id
-      type: one
-TrackingValidation:
-  connection: doctrine
-  tableName: nf_tracking_validation
-  columns:
-    id:
-      type: integer(4)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: true
-    code:
+    image_name:
       type: string(255)
       fixed: false
       unsigned: false
       primary: false
       notnull: false
       autoincrement: false
-    created_date:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-Winners:
-  connection: doctrine
-  tableName: nf_winners
-  columns:
-    award_id:
-      type: integer(8)
-      fixed: false
-      unsigned: true
+    image_location:
+      type: bigint(20)
       primary: true
-      autoincrement: false
-    fbuser_id:
+      notnull: true
+    image_description:
       type: string(255)
-      fixed: false
-      unsigned: false
-      primary: true
-      autoincrement: false
-    winning_date:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
       notnull: true
-      autoincrement: false
+    image_like:
+      type: bigint(20)
+    image_comment:
+      type: bigint(20)
+    image_uploaded:
+      type: timestamp(25)
+    image_fbuser_id:
+      type: bigint(20)
+      notnull: true
   relations:
-    Awards:
-      local: award_id
-      foreign: id
-      type: one
     Fbusers:
-      local: fbuser_id
-      foreign: fbuser_id
-      type: one
-WinnersInformation:
+      class: Fbusers
+      local: image_fbuser_id
+      foreign: user_id
+      foreignAlias: Image_Fbuser
+      onDelete: CASCADE
+    Location:
+      class: Location
+      local: image_location
+      foreign: location_id
+  indexes:
+    image_id_image_fbuser_id:
+      fields: [image_id, image_fbuser_id]
+Location:
   connection: doctrine
-  tableName: nf_winners_information
+  tableName: nf_location
   columns:
-    fbuser_id:
-      type: string(255)
-      fixed: false
-      unsigned: false
+    location_id:
+      type: bigint(20)
+      notnull: true
       primary: true
-      autoincrement: false
-    award_id:
-      type: integer(8)
-      fixed: false
-      unsigned: true
+      autoincrement: true
+    location_name:
+      type: string(255)        
+      notnull: false
+Comment:
+  connection: doctrine
+  tableName: nf_comment
+  columns:
+    comment_id:
+      type: bigint(20)
+      notnull: true
       primary: true
-      autoincrement: false
-    first_name:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
+      autoincrement: true
+    comment_status:
+      type: boolean
       notnull: true
-      autoincrement: false
-    last_name:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    email_address:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    mailing_address:
-      type: string()
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    zip_code:
-      type: string(255)
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    created_date:
+      default: 1
+    comment_date:
       type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
+      notnull: false
+    comment_image:
+      type: bigint(20)
       notnull: true
-      autoincrement: false
-    modified_date:
-      type: timestamp(25)
-      fixed: false
-      unsigned: false
-      primary: false
+    comment_fbuser:
+      type: bigint(20)
       notnull: true
-      autoincrement: false
   relations:
-    Awards:
-      local: award_id
-      foreign: id
-      type: one
     Fbusers:
-      local: fbuser_id
-      foreign: fbuser_id
-      type: one
+      class: Fbusers
+      local: comment_fbuser
+      foreign: user_id
+      foreignAlias: Comment_Fbuser
+      onDelete: CASCADE
+    Image:
+      class: Image
+      local: comment_image
+      foreign: image_id
+      foreignAlias: Comment_Image
+      onDelete: CASCADE
+      
