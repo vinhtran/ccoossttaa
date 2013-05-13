@@ -46,7 +46,7 @@ dev:
     appSecret: 920abfc310069c4cac05bf112c5d2a5d
 #    appLink: "http://apps.facebook.com/nokialumiapctwo_dev"
     appRequiredPermission: [email, publish_stream]
-    pageId: 404339862911677
+    pageId: 235000836543899
     pageLink: "http://www.facebook.com/Ereka.Hura/app_283005891837009"
     #userLocale: en_US #fr_FR #
     
