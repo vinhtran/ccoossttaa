@@ -1,0 +1,14 @@
+saveUserInfo:
+  is_secure: on
+  credentials: <?php echo sfFacebookUser::USER_CREDENTIAL?>
+  
+validatePuzzle:
+  is_secure: on
+  credentials: <?php echo sfFacebookUser::USER_CREDENTIAL?>
+
+playedPuzzle:
+  is_secure: on
+  credentials: <?php echo sfFacebookUser::USER_CREDENTIAL?>
+    
+all: 
+  is_secure: false

@@ -1,0 +1,6 @@
+.MbCenterRow {display:inline-block;}
+.MbCenterRow {display:inline; }
+.MbCenterCell {display:inline-block;}
+.MbCenterCell { display:inline;}
+.MbCenterCellIn { display:inline-block !important;}
+.MbHrCenterWrap {text-align:center;}

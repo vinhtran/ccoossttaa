@@ -1,0 +1,104 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/05-Factories
+
+prod:
+  logger:
+    class: sfAggregateLogger
+    param:
+      level: err
+      loggers:
+        sf_file_debug:
+          class: nfFileLogger
+          param:
+            level: err
+  view_cache:
+    class: sfFileCache
+    param:
+      automatic_cleaning_factor: 0
+      cache_dir:                 %SF_TEMPLATE_CACHE_DIR%
+      lifetime:                  86400
+      prefix:                    %SF_APP_DIR%/template    
+  mailer:
+    class: sfMailer
+    param:
+      delivery_strategy: realtime
+      transport:
+        class: Swift_SmtpTransport
+        param:
+          host: "<host of server email>"
+          port: "<port of server email>"    
+
+test:
+  logger:
+    class: sfAggregateLogger
+    param:
+      level: err
+      loggers:
+        sf_file_debug:
+          class: nfFileLogger
+          param:
+            level: err
+  view_cache:
+    class: sfFileCache
+    param:
+      automatic_cleaning_factor: 0
+      cache_dir:                 %SF_TEMPLATE_CACHE_DIR%
+      lifetime:                  86400
+      prefix:                    %SF_APP_DIR%/template
+  mailer:
+    class: sfMailer
+    param:
+      delivery_strategy: realtime
+      transport:
+        class: Swift_SmtpTransport
+        param:
+          host: localhost
+          port: 25
+
+dev:
+  logger:
+    class: sfAggregateLogger
+    param:
+      loggers:
+        sf_file_debug:
+          class: nfFileLogger
+  mailer:
+    class: sfMailer
+    param:
+      delivery_strategy: realtime
+      transport:
+        class: Swift_SmtpTransport
+        param:
+          host:     192.168.199.9
+          port:       25
+  view_cache:
+    class: sfFileCache
+    param:
+      automatic_cleaning_factor: 0
+      cache_dir:                 %SF_TEMPLATE_CACHE_DIR%
+      lifetime:                  86400
+      prefix:                    %SF_APP_DIR%/template  
+    #class: sfMemcacheSingleton
+    #param:
+    #  lifetime: 86400
+    #  #prefix:  some_prefix
+    #  servers:
+    #    server_01:
+    #      host: 192.168.10.55
+    #      post: 11211
+
+all:
+  user:
+    class: myUser
+    
+  routing:
+    class: sfPatternRouting
+    param:
+      generate_shortest_url:            true
+      extra_parameters_as_query_string: true
+
+  view_cache_manager:
+    class: sfViewCacheManager
+    param:
+      cache_key_use_vary_headers: true
+      cache_key_use_host_name:    true

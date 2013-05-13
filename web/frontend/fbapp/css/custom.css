@@ -1,0 +1,15 @@
+.Hidden {
+	display: none;
+}
+
+.DkBlockInfoExt {
+    width: 295px;
+}
+
+#playGameBtn span.Loading {
+	width: 107px;
+}
+
+.DkThumbGame {
+	margin-bottom: 7px;
+}

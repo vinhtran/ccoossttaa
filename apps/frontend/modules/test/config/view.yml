@@ -1,0 +1,4 @@
+all:
+  stylesheets:    [-*, main.css]
+  javascripts:    [-*, jquery.min.js, main.js, custom.js]
+  layout: test

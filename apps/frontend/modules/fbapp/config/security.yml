@@ -1,0 +1,17 @@
+page:
+  is_secure: false
+  
+puzzleGame:
+  is_secure: on 
+  credentials: <?php echo sfFacebookUser::USER_CREDENTIAL?>
+  
+puzzleEnd:
+  is_secure: on 
+  credentials: <?php echo sfFacebookUser::USER_CREDENTIAL?>
+  
+puzzlePlayed:
+  is_secure: on 
+  credentials: <?php echo sfFacebookUser::USER_CREDENTIAL?>
+  
+all: 
+  is_secure: false  

@@ -1,0 +1,4 @@
+all:
+  stylesheets:    [-*, all.css]
+  javascripts:    [-*, jquery.min.js, main.js, plugins.js]
+  layout: mobile

@@ -1,0 +1,24 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: fbapp, action: page }
+
+service_save_user_info:
+  url:   /save-info
+  param: { module: service, action: saveUserInfo }
+  
+service_invitation:
+  url:   /invitation/:inviter_id
+  param: { module: service, action: invitation }
+  
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

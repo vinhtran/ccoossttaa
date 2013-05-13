@@ -1,0 +1,25 @@
+puzzleGameSuccess:
+  metas:
+    title: Puzzle Game
+  javascripts:    [plugins.js]
+  
+puzzleEndSuccess:
+  metas:
+    title: Puzzle End
+
+puzzlePlayedSuccess:
+  metas:
+    title: Puzzle Played
+      
+pageFanSuccess:
+  metas:
+    title: Fan Page
+
+pageNonFanSuccess:
+  metas:
+    title: Non Fan Page
+
+all:
+  stylesheets:    [-*, main.css, custom.css]
+  javascripts:    [-*, jquery.min.js, jquery-ui-min.js, plugins.js, custom.js]
+  layout: fbpage

@@ -1,0 +1,59 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+#-----------------------configuration for production environment-----------------------#
+prod:
+  administrator:
+    email: "jeu-nokia@orange.gp"
+    name: "Nokia Lumia puzzle code"
+  facebookApp:
+    appId: "272548932793880"
+    appSecret: "57116479816e6836fbe71d0bf10b5de7"
+    appLink: ""
+    appRequiredPermission: [email, publish_stream]
+    pageId: "170852259598827"
+    pageLink: "http://www.facebook.com/Orange.France?sk=app_272548932793880"
+  googleAnalytics: 
+    account: "UA-27648268-1"
+  bitly:
+    loginName: viemonde
+    api_key: R_822504662766aae980d88c7183bf93dd    
+    
+#-----------------------configuration for testing environment-----------------------#  
+test:
+  administrator:
+    email: thang.pham@vn.pyramid-consulting.com
+    name: "Nokia Lumia puzzle code"
+  facebookApp:
+    appId: 219107258189643
+    appSecret: 130667b2dae03e6de7c17fa5d19d493b
+    appLink: "http://apps.facebook.com/nokialumiapctwo_demo/"
+    appRequiredPermission: [email, publish_stream]
+    pageId: 404339862911677
+    pageLink: "http://www.facebook.com/pages/Ho-Chi-Minh/404339862911677?sk=app_219107258189643"
+    #userLocale: fr_FR
+  googleAnalytics:
+    account: "UA-27662991-1"    
+  bitly:
+    loginName: viemonde
+    api_key: R_822504662766aae980d88c7183bf93dd  
+  
+#-----------------------configuration for development environment-----------------------#  
+dev:
+  facebookApp:
+    appId: 283005891837009
+    appSecret: 920abfc310069c4cac05bf112c5d2a5d
+#    appLink: "http://apps.facebook.com/nokialumiapctwo_dev"
+    appRequiredPermission: [email, publish_stream]
+    pageId: 404339862911677
+    pageLink: "http://www.facebook.com/Ereka.Hura/app_283005891837009"
+    #userLocale: en_US #fr_FR #
+    
+
+#-----------------------configuration for all environments-----------------------#  
+all:
+      
+      
+    
+    
