@@ -1,6 +1,6 @@
 Fbusers:
   connection: doctrine
-  tableName: nf_fbusers
+  tableName: co_fbusers
   columns:
     user_id:
       type: bigint(20)
@@ -60,7 +60,7 @@ Fbusers:
   #    type: many
 Image:
   connection: doctrine
-  tableName: nf_image
+  tableName: co_image
   columns:
     image_id:
       type: bigint(20)
@@ -106,7 +106,7 @@ Image:
       fields: [image_id, image_fbuser_id]
 Location:
   connection: doctrine
-  tableName: nf_location
+  tableName: co_location
   columns:
     location_id:
       type: bigint(20)
@@ -118,7 +118,7 @@ Location:
       notnull: false
 Comment:
   connection: doctrine
-  tableName: nf_comment
+  tableName: co_comment
   columns:
     comment_id:
       type: bigint(20)
