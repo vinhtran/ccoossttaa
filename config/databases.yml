@@ -1,0 +1,47 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+prod:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=<database host>;dbname=<database name>
+      username: "<database username>"
+      password: "<database password>"
+      attributes:
+        #quote_identifier: false
+        #use_native_enum: false
+        #validate: all
+        #idxname_format: %s_idx
+        #seqname_format: %s_seq
+        tblname_format: nf_%s
+test:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=192.168.175.2;dbname=nokiafg
+      username: "nokiafg"
+      password: "JJ5e3c5h89J7G6v"
+      attributes:
+        #quote_identifier: false
+        #use_native_enum: false
+        #validate: all
+        #idxname_format: %s_idx
+        #seqname_format: %s_seq
+        tblname_format: nf_%s      
+dev:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=symfony.nokiafb.v2
+      username: root
+      password: 123456
+      attributes:
+        #quote_identifier: false
+        #use_native_enum: false
+        #validate: all
+        #idxname_format: %s_idx
+        #seqname_format: %s_seq
+        tblname_format: nf_%s
+
+all:
