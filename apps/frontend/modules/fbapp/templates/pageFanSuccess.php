@@ -1,7 +1,7 @@
-<div class="DkMain DkMainExt">
+<?php ?><div class="DkMain DkMainExt">
   <div class="DkBlockRight">
     <div class="BlockLike">
-      <h1 class="Dktxt02Ext">Nokia Lumia</h1>
+      <h1 class="Dktxt02Ext">Nokia Lumiafff</h1>
       <h2 class="Dktxt03Ext">Puzzle Code</h2>
       <h3 class="Dktxt11"><?php //echo $numOfAvailableAwards?>6 Nokia LUMIA à gagner !</h3>
       <p class="DkAvartaLike"><img src="<?php echo image_path('img-product.png', true)?>" width="295" height="240" alt="" /></p>
