@@ -1,21 +1,8 @@
 <script type="text/javascript">
   function fb_login_event()
   {
-    $('#playGameBtn').click(function() {
-      window.oldText = $('#playGameBtn > span').html();
-    	var loadingText = new Array(
-	  		'je joue.&nbsp;&nbsp;',
-	  		'je joue..&nbsp;', 
-	  		'je joue...'
-	  	);
-			var position = 0;
-			$('#playGameBtn > span').addClass('Loading');
-			window.playGameBtnInterval = setInterval(function() {
-				$('#playGameBtn > span').html(loadingText[position % 3]);
-		  	++position == 3 && (position = 0);
-			}, 500);
-			
-			$('#playGameBtn').unbind('click');
+    $('#btnGatePage').click(function() {
+			$('#btnGatePage').unbind('click');
 			
   	  FB.getLoginStatus(function(glsResponse) {
 //  	  	console.log('getLoginStatus:');

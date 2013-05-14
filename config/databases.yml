@@ -14,7 +14,7 @@ prod:
         #validate: all
         #idxname_format: %s_idx
         #seqname_format: %s_seq
-        tblname_format: nf_%s
+        tblname_format: co_%s
 test:
   doctrine:
     class: sfDoctrineDatabase
@@ -28,20 +28,20 @@ test:
         #validate: all
         #idxname_format: %s_idx
         #seqname_format: %s_seq
-        tblname_format: nf_%s      
+        tblname_format: co_%s      
 dev:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=symfony.nokiafb.v2
+      dsn:      mysql:host=localhost;dbname=costa
       username: root
-      password: 123456
+      password: 
       attributes:
         #quote_identifier: false
         #use_native_enum: false
         #validate: all
         #idxname_format: %s_idx
         #seqname_format: %s_seq
-        tblname_format: nf_%s
+        tblname_format: co_%s
 
 all:

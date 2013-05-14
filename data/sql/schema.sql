@@ -1,0 +1,9 @@
+CREATE TABLE co_comment (comment_id bigint(20), comment_status TINYINT(1) DEFAULT '1' NOT NULL, comment_date DATETIME, comment_image bigint(20) NOT NULL, comment_fbuser bigint(20) NOT NULL, INDEX comment_image_idx (comment_image), INDEX comment_fbuser_idx (comment_fbuser), PRIMARY KEY(comment_id)) ENGINE = INNODB;
+CREATE TABLE co_fbusers (user_id bigint(20), fbuser_id VARCHAR(255), fbuser_email VARCHAR(255), fbuser_first_name VARCHAR(255), fbuser_last_name VARCHAR(255), fbuser_data TEXT, created_date DATETIME, modified_date DATETIME, INDEX user_id_idx (user_id), PRIMARY KEY(fbuser_id)) ENGINE = INNODB;
+CREATE TABLE co_image (image_id bigint(20), image_name VARCHAR(255), image_location bigint(20), image_description VARCHAR(255) NOT NULL, image_like bigint(20), image_comment bigint(20), image_uploaded DATETIME, image_fbuser_id bigint(20) NOT NULL, INDEX image_id_image_fbuser_id_idx (image_id, image_fbuser_id), INDEX image_fbuser_id_idx (image_fbuser_id), PRIMARY KEY(image_id, image_location)) ENGINE = INNODB;
+CREATE TABLE co_location (location_id bigint(20), location_name VARCHAR(255), PRIMARY KEY(location_id)) ENGINE = INNODB;
+ALTER TABLE co_comment ADD CONSTRAINT co_comment_comment_image_co_image_image_id FOREIGN KEY (comment_image) REFERENCES co_image(image_id) ON DELETE CASCADE;
+ALTER TABLE co_comment ADD CONSTRAINT co_comment_comment_fbuser_co_fbusers_user_id FOREIGN KEY (comment_fbuser) REFERENCES co_fbusers(user_id) ON DELETE CASCADE;
+ALTER TABLE co_image ADD CONSTRAINT co_image_image_location_co_location_location_id FOREIGN KEY (image_location) REFERENCES co_location(location_id);
+ALTER TABLE co_image ADD CONSTRAINT co_image_image_id_co_comment_comment_image FOREIGN KEY (image_id) REFERENCES co_comment(comment_image);
+ALTER TABLE co_image ADD CONSTRAINT co_image_image_fbuser_id_co_fbusers_user_id FOREIGN KEY (image_fbuser_id) REFERENCES co_fbusers(user_id) ON DELETE CASCADE;

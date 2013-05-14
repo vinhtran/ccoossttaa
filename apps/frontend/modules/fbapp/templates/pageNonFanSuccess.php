@@ -1,18 +1,30 @@
-<div class="ArrowTop"><img src="<?php echo image_path('txt-jaime.png', true)?>" width="194" height="34" alt="" /></div>
-<div class="DkMain DkMainExt DkmainNonLike">
-  <div class="DkBlockRight">
-    <div class="BlockLike">
-      <h1 class="Dktxt02Ext">Nokia Lumia</h1>
-      <h2 class="Dktxt03Ext">Puzzle Code</h2>
-      <h3 class="Dktxt11"><?php //echo $numOfAvailableAwards?>6 Nokia LUMIA à gagner !</h3>
-      <p class="DkAvartaLike"><img src="<?php echo image_path('img-product.png', true)?>" width="295" height="240" alt="" /></p>
-      <div class="DkBlockInfoExt">
-        <p class="Dktxt12">Comment gagner ?</p>
-        <p class="Dktxt13">Résolvez le puzzle et flashez <br />le QR code au bon moment !</p>
-			</div>
-    </div>
+<div id="layered_fx">
+  <div id="logo_65_years">
+    <a href="" title="Costa Cruise">
+      <img src="<?php echo image_path('logo-65-years.png', true) ?>" alt="Costa Cruise" />
+    </a>
   </div>
-
-  <?php include_partial('nokiaLogo')?>
-        
+  <div class="app_headline_gate">
+    <a href="" title="Costa Cruise">
+      <img src="<?php echo image_path('title-home-page.png', true) ?>" alt="Costa Cruise" width="581px" height="154px" />
+    </a>
+  </div>
+  <div class="app_intro_gate">
+    <p>65 ans que Costa vous invite à l'évasion en vous proposant des crosières de rêve.</p><p>Partage vos souvernirs de vacances avec nous et tentez de gagner de nombreux cadeux!</p>  </div>
+  <div class="app_participate_gate">
+    Clique sur <em>j'aime</em> pour jouer
+  </div>
+  <div class="cruise_liner_gate">
+    <img src="<?php echo image_path('cruiser-large.png', true) ?>" alt="Costa Cruise" />
+  </div>
+  <div class="polaroids_gate">
+    <img src="<?php echo image_path('polaroids-mini.png', true) ?>" alt="Costa Cruise" />
+  </div>
+  <div class="prizelist_gate">
+    <ul>
+      <li>1 Croisère Costa</li>
+      <li>D`une semaine pour 2 personnes</li>
+      <li>2 Mini-Croisere Costa et plus encore...</li>
+    </ul>
+  </div>
 </div>

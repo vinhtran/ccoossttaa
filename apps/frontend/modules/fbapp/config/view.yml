@@ -20,6 +20,7 @@ pageNonFanSuccess:
     title: Non Fan Page
 
 all:
-  stylesheets:    [-*, main.css, custom.css]
+  #stylesheets:    [-*, main.css, custom.css]
+  stylesheets:    [-*, screen.css, ie.css]
   javascripts:    [-*, jquery.min.js, jquery-ui-min.js, plugins.js, custom.js]
   layout: fbpage
